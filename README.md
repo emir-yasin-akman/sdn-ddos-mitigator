@@ -13,12 +13,13 @@ Bu çalışma, Yazılım Tanımlı Ağlar (SDN) mimarisini kullanarak geleneksel
 
 2. Projeyi klonlayın:
    ```bash
-   git clone [https://github.com/emir-yasin-akman/sdn-ddos-mitigator.git](https://github.com/emir-yasin-akman/sdn-ddos-mitigator.git)
+   git clone https://github.com/emir-yasin-akman/sdn-ddos-mitigator.git
    cd sdn-ddos-mitigator
 
 3. Ryu Kontrolcüsünü başlatın:
     ```bash
     ryu-manager smart_controller.py
+NOT: Eğer kontrolcüyü başlatma esnasında herhangi bir hata alırsanız kontrolcüyü bir sanal ortamda (venv) başlatırsanız sorun ortadan kalkacaktır.
 
 4. Mininet topolojisini kurun:
     ```bash
@@ -41,7 +42,6 @@ Bu çalışma, Yazılım Tanımlı Ağlar (SDN) mimarisini kullanarak geleneksel
 
 Yeni bir terminal açıp projenin olduğu klasöre girdikten sonra aşağıdaki komutu çalıştırdıktan sonra geçmiş saldırılarla ilgili detaylı      bilgileri inceleyebilirsiniz.
 
-    
     cat saldirilar.log
 
 ## Lisans

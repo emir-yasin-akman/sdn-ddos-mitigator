@@ -83,7 +83,7 @@ class SmartDdosGuard(app_manager.RyuApp):
             print(f"!!! SALDIRI TESPİTİ: {src_ip} !!!")
             self.blocked_ips.add(src_ip)
             
-            # DOSYAYA KAYDET
+            
             self.log_attack(src_ip, proto_name)
             
             match = parser.OFPMatch(eth_type=0x0800, ipv4_src=src_ip)

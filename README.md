@@ -40,7 +40,7 @@ NOT: Eğer kontrolcüyü başlatma esnasında herhangi bir hata alırsanız kont
 
 ## Saldırı Geçmişi
 
-Yeni bir terminal açıp projenin olduğu klasöre girdikten sonra aşağıdaki komutu çalıştırdıktan sonra geçmiş saldırılarla ilgili detaylı      bilgileri inceleyebilirsiniz.
+Yeni bir terminal açıp projenin olduğu klasörün içindeyken aşağıdaki komutu çalıştırdıktan sonra geçmiş saldırılarla ilgili detaylı      bilgileri inceleyebilirsiniz.
 
     cat saldirilar.log
 

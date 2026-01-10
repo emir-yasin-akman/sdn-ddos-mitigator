@@ -8,6 +8,12 @@ Bu çalışma, Yazılım Tanımlı Ağlar (SDN) mimarisini kullanarak geleneksel
 - **Kalıcı Loglama:** Tüm saldırı girişimlerini `saldirilar.log` dosyasına zaman damgasıyla kaydeder.
 - **OpenFlow 1.3:** Modern SDN standartlarına uygun olarak geliştirilmiştir.
 
+## 🧠 Çalışma Mantığı
+1. **Packet-In:** Switch, eşleşme bulamadığı yeni paketleri OpenFlow protokolü üzerinden kontrolcüye gönderir.
+2. **Derin Analiz:** Kontrolcü, paketin Ethernet ve IP katmanlarını soyarak L4 (TCP/UDP/ICMP) başlıklarını inceler.
+3. **PPS Takibi:** Her kaynak IP için saniyelik paket istatistikleri tutulur.
+4. **Mitigation (Engelleme):** Eğer bir IP belirlenen eşiği aşarsa, switch'e o IP'den gelen tüm trafiği 'DROP' etmesi için yüksek öncelikli (priority=100) bir kural yazılır.
+
 ## 🛠️ Kurulum
 1. Mininet ve Ryu'yu yükleyin.
 
@@ -37,6 +43,11 @@ NOT: Eğer kontrolcüyü başlatma esnasında herhangi bir hata alırsanız kont
 
     Saldırı Simülasyonu: h1 hping3 --flood -S -p 80 10.0.0.2 (Loglarda SALDIRI uyarısı verir ve h1 bloklanır)
     Saldırı Simülasyonu: h3 hping3 --flood --udp -p 53 10.0.0.2 (Loglarda SALDIRI uyarısı verir ve h3 bloklanır)
+
+### Çalışma Anından Bazı Görseller
+![HTTP Saldırı Tespiti](images/saldiri_log_1.png)
+![DNS Saldırı Tespiti](images/saldiri_log_2.png)
+
 
 ## Saldırı Geçmişi
 

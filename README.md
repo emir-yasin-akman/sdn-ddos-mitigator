@@ -37,7 +37,6 @@ Projenin çalıştırılması esnasında karşılaşılabilecek olası hatalar v
 ### 1. Ryu Kontrolcüsü Başlatma Hataları (Import/Attribute Errors)
 Ryu, Python tabanlı bir kütüphanedir ve sistemdeki diğer Python paketleriyle (özellikle `eventlet` veya `greenlet`) versiyon uyumsuzluğu yaşayabilir. Eğer `ryu-manager` komutunu çalıştırdığınızda `AttributeError` veya kütüphane kaynaklı hatalar alıyorsanız, projeyi izole bir sanal ortamda (**venv**) çalıştırmak en sağlıklı çözümdür:
 
-    ```bash
       # Sanal ortam oluşturma
       python3 -m venv venv
       
@@ -51,9 +50,9 @@ Ryu, Python tabanlı bir kütüphanedir ve sistemdeki diğer Python paketleriyle
 
 Mininet başlatıldığında kontrolcüye bağlanamıyorsa aşağıdaki adımları takip edin:
 
-    Port Kontrolü: Ryu'nun varsayılan portu bazen 6633 bazen 6653 olabilir. Mininet komutunda port=6653 parametresini kullandığınızdan emin olun.
+Port Kontrolü: Ryu'nun varsayılan portu bazen 6633 bazen 6653 olabilir. Mininet komutunda port=6653 parametresini kullandığınızdan emin olun.
 
-    Temizlik: Eski topolojilerden kalan kalıntıları temizlemek için önce Mininet'ten çıkın, ardından şu komutu çalıştırın: sudo mn -c
+   Temizlik: Eski topolojilerden kalan kalıntıları temizlemek için önce Mininet'ten çıkın, ardından şu komutu çalıştırın: sudo mn -c
 
 ### 3. Paketlerin Drop Edilmemesi
 

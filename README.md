@@ -40,9 +40,21 @@ NOT: Eğer kontrolcüyü başlatma esnasında herhangi bir hata alırsanız kont
 
 ## Saldırı Geçmişi
 
-Yeni bir terminal açıp projenin olduğu klasörün içindeyken aşağıdaki komutu çalıştırdıktan sonra geçmiş saldırılarla ilgili detaylı      bilgileri inceleyebilirsiniz.
+Yeni bir terminal açıp projenin olduğu klasörün içindeyken aşağıdaki komutu çalıştırdıktan sonra geçmiş saldırılarla ilgili detaylı bilgileri inceleyebilirsiniz.
 
     cat saldirilar.log
+
+## Ekran Görüntüleri ve Kanıtlar
+
+Sistemin çalışma mantığını ve saldırı anındaki tepkilerini içeren ekran görüntüleri `images` klasörü altında yer almaktadır.
+
+* **Trafik Logları:** Normal ağ trafiğinin (ICMP, TCP vb.) kontrolcü tarafından nasıl sınıflandırıldığını gösteren terminal çıktıları.
+* **Saldırı Tespiti:** hping3 saldırısı başladığında eşik değerin aşılması ve "SALDIRI ALARMI" mesajının tetiklenmesi.
+* **Otomatik Engelleme:** Saldırgan IP'nin engellenmesi ve ardından gelen paketlerin drop edilmesi.
+* **Kalıcı Kayıtlar:** `saldirilar.log` dosyasında tutulan zaman damgalı saldırı raporları.
+
+> **Not:** Tüm görseller projenin doğrulanabilirliği için `/images` klasörüne commit edilmiştir.
+
 
 ## Lisans
 

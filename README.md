@@ -98,6 +98,15 @@ Sistemin çalışma mantığını ve saldırı anındaki tepkilerini içeren ekr
 
 > **Not:** Tüm görseller projenin doğrulanabilirliği için `/images` klasörüne commit edilmiştir.
 
+## Gelecek Geliştirmeler (Roadmap)
+
+Projenin kapsamını genişletmek ve daha proaktif bir siber savunma yapısı oluşturmak için aşağıdaki özelliklerin eklenmesi planlanmaktadır:
+
+- **Makine Öğrenimi (ML) Entegrasyonu:** Statik eşik değerleri (threshold) yerine, Scikit-learn kullanılarak eğitilmiş modeller ile "Low-rate DDoS" saldırılarının davranışsal analizi.
+- **Görsel Dashboard:** Flask veya Django tabanlı bir web arayüzü ile ağ trafiğinin, engellenen IP'lerin ve saldırı istatistiklerinin anlık olarak görselleştirilmesi.
+- **Dinamik Eşik Yönetimi:** Ağın normal trafik yoğunluğuna göre (gece/gündüz farkı vb.) kendini güncelleyen adaptif eşik değerleri.
+- **Honeypot Entegrasyonu:** Tespit edilen saldırgan IP'lerin doğrudan engellenmesi yerine, sistem detaylarını gizlemek amacıyla sahte bir ağa (honeypot) yönlendirilmesi.
+- **Gelişmiş Forensics:** Saldırı anındaki paketlerin `.pcap` formatında kaydedilerek Wireshark ile derinlemesine incelenebilmesi.
 
 ## Lisans
 

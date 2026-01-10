@@ -25,11 +25,43 @@ Bu çalışma, Yazılım Tanımlı Ağlar (SDN) mimarisini kullanarak geleneksel
 3. Ryu Kontrolcüsünü başlatın:
     ```bash
     ryu-manager smart_controller.py
-NOT: Eğer kontrolcüyü başlatma esnasında herhangi bir hata alırsanız kontrolcüyü bir sanal ortamda (venv) başlatırsanız sorun ortadan kalkacaktır.
 
 4. Mininet topolojisini kurun:
-    ```bash
+   ```bash
     sudo mn --controller=remote,ip=127.0.0.1 --switch=ovs,protocols=OpenFlow13 --topo=single,3 
+
+## 🔍 Sorun Giderme (Troubleshooting)
+
+Projenin çalıştırılması esnasında karşılaşılabilecek olası hatalar ve çözümleri aşağıda belirtilmiştir:
+
+### 1. Ryu Kontrolcüsü Başlatma Hataları (Import/Attribute Errors)
+Ryu, Python tabanlı bir kütüphanedir ve sistemdeki diğer Python paketleriyle (özellikle `eventlet` veya `greenlet`) versiyon uyumsuzluğu yaşayabilir. Eğer `ryu-manager` komutunu çalıştırdığınızda `AttributeError` veya kütüphane kaynaklı hatalar alıyorsanız, projeyi izole bir sanal ortamda (**venv**) çalıştırmak en sağlıklı çözümdür:
+
+    ```bash
+# Sanal ortam oluşturma
+python3 -m venv venv
+
+# Sanal ortamı aktif etme
+source venv/bin/activate
+
+# Gerekli bağımlılıkları yükleme
+pip install ryu eventlet==0.30.2 greenlet==2.0.2
+
+### 2. Mininet Bağlantı Sorunları (Unable to contact remote controller)
+
+Mininet başlatıldığında kontrolcüye bağlanamıyorsa aşağıdaki adımları takip edin:
+
+    Port Kontrolü: Ryu'nun varsayılan portu bazen 6633 bazen 6653 olabilir. Mininet komutunda port=6653 parametresini kullandığınızdan emin olun.
+
+    Temizlik: Eski topolojilerden kalan kalıntıları temizlemek için önce Mininet'ten çıkın, ardından şu komutu çalıştırın: sudo mn -c
+
+### 3. Paketlerin Drop Edilmemesi
+
+Saldırı tespiti yapılmasına rağmen trafik kesilmiyorsa:
+
+    Switch'in OpenFlow 1.3 protokolünü desteklediğinden emin olun: protocols=OpenFlow13.
+
+    Kontrolcü ve Switch'in aynı IP/Port üzerinden haberleştiğini ovs-vsctl show komutuyla teyit edin.
 
 ## Test Senaryosu
 
@@ -47,6 +79,7 @@ NOT: Eğer kontrolcüyü başlatma esnasında herhangi bir hata alırsanız kont
 ### Çalışma Anından Bazı Görseller
 ![HTTP Saldırı Tespiti](images/saldiri_log_1.png)
 ![DNS Saldırı Tespiti](images/saldiri_log_2.png)
+![Kalıcı Loglama](images/saldirilar_dosyasi.png)
 
 
 ## Saldırı Geçmişi

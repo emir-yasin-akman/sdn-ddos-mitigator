@@ -52,15 +52,15 @@ Mininet başlatıldığında kontrolcüye bağlanamıyorsa aşağıdaki adımlar
 
 Port Kontrolü: Ryu'nun varsayılan portu bazen 6633 bazen 6653 olabilir. Mininet komutunda port=6653 parametresini kullandığınızdan emin olun.
 
-   Temizlik: Eski topolojilerden kalan kalıntıları temizlemek için önce Mininet'ten çıkın, ardından şu komutu çalıştırın: sudo mn -c
+Temizlik: Eski topolojilerden kalan kalıntıları temizlemek için önce Mininet'ten çıkın, ardından şu komutu çalıştırın: sudo mn -c
 
 ### 3. Paketlerin Drop Edilmemesi
 
 Saldırı tespiti yapılmasına rağmen trafik kesilmiyorsa:
 
-    Switch'in OpenFlow 1.3 protokolünü desteklediğinden emin olun: protocols=OpenFlow13.
+Switch'in OpenFlow 1.3 protokolünü desteklediğinden emin olun: protocols=OpenFlow13.
 
-    Kontrolcü ve Switch'in aynı IP/Port üzerinden haberleştiğini ovs-vsctl show komutuyla teyit edin.
+Kontrolcü ve Switch'in aynı IP/Port üzerinden haberleştiğini ovs-vsctl show komutuyla teyit edin.
 
 ## Test Senaryosu
 

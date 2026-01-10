@@ -38,14 +38,14 @@ Projenin çalıştırılması esnasında karşılaşılabilecek olası hatalar v
 Ryu, Python tabanlı bir kütüphanedir ve sistemdeki diğer Python paketleriyle (özellikle `eventlet` veya `greenlet`) versiyon uyumsuzluğu yaşayabilir. Eğer `ryu-manager` komutunu çalıştırdığınızda `AttributeError` veya kütüphane kaynaklı hatalar alıyorsanız, projeyi izole bir sanal ortamda (**venv**) çalıştırmak en sağlıklı çözümdür:
 
     ```bash
-# Sanal ortam oluşturma
-python3 -m venv venv
-
-# Sanal ortamı aktif etme
-source venv/bin/activate
-
-# Gerekli bağımlılıkları yükleme
-pip install ryu eventlet==0.30.2 greenlet==2.0.2
+      # Sanal ortam oluşturma
+      python3 -m venv venv
+      
+      # Sanal ortamı aktif etme
+      source venv/bin/activate
+      
+      # Gerekli bağımlılıkları yükleme
+      pip install ryu eventlet==0.30.2 greenlet==2.0.2
 
 ### 2. Mininet Bağlantı Sorunları (Unable to contact remote controller)
 
